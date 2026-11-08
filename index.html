@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventPulse — Campus Hackathon &amp; Workshop Portal</title>
+  <meta name="description" content="One place to browse campus hackathons, coding bootcamps and guest lectures, meet speakers, check seats and register.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">Event<span>Pulse</span></a>
+      <nav class="nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="is-active" aria-current="page">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="index.html#venue">Venue</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li class="nav__cta-item"><a href="index.html#register">Register</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#register" class="btn site-header__cta">Register</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__bars"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="section__eyebrow">EventPulse Tech Week &middot; 10–12 December 2026</p>
+        <h1>Build. Learn. <em>Ship.</em></h1>
+        <p class="hero__lead">Three days of hackathons, coding bootcamps and guest lectures, all in one place. Browse the schedule, meet the speakers and grab your seat.</p>
+        <div class="hero__actions">
+          <a href="#register" class="btn">Register now</a>
+          <a href="events.html" class="btn btn--ghost">Browse all events</a>
+        </div>
+        <dl class="hero__meta">
+          <div><dt>When</dt><dd>10–12 Dec 2026</dd></div>
+          <div><dt>Where</dt><dd>Innovation Hub, Main Campus</dd></div>
+          <div><dt>Entry</dt><dd>Free, seats limited</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow">About</p>
+          <h2>What's happening</h2>
+          <p>Tech Week brings three kinds of events together so you can build something, learn a new skill and hear from people working in the industry.</p>
+        </div>
+        <div class="grid grid--3">
+          <article class="card highlight">
+            <div class="highlight__icon" aria-hidden="true">⚡</div>
+            <h3>Hackathons</h3>
+            <p>Team up, pick a problem and build a working project against the clock. Mentors are around all weekend.</p>
+            <span class="tag">2 events</span>
+          </article>
+          <article class="card highlight">
+            <div class="highlight__icon" aria-hidden="true">🛠️</div>
+            <h3>Coding bootcamps</h3>
+            <p>Practical, hands-on sessions that take you from the basics to something you can show off.</p>
+            <span class="tag">2 events</span>
+          </article>
+          <article class="card highlight">
+            <div class="highlight__icon" aria-hidden="true">🎤</div>
+            <h3>Guest lectures</h3>
+            <p>Engineers, designers and founders share what the work is really like and how they got there.</p>
+            <span class="tag">2 events</span>
+          </article>
+        </div>
+        <div class="stats">
+          <div><div class="stat__num">3</div><div class="stat__label">days</div></div>
+          <div><div class="stat__num">6</div><div class="stat__label">events</div></div>
+          <div><div class="stat__num">8</div><div class="stat__label">speakers</div></div>
+          <div><div class="stat__num">548</div><div class="stat__label">seats</div></div>
+        </div>
+        <div class="section__more">
+          <a href="events.html" class="btn">See all events →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="agenda">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow">Schedule</p>
+          <h2>Agenda</h2>
+          <p>All three days at a glance. Times are local campus time.</p>
+        </div>
+
+          <div class="agenda-day" id="day1">
+            <div class="agenda-day__head"><h3>Day 1</h3><span>Thursday 10 Dec</span></div>
+            <ul class="agenda-list">
+              <li>
+                <span class="agenda-time">09:00</span>
+                <div class="agenda-item">
+                  <h4>Check-in and welcome</h4>
+                  <p>Collect your badge and meet the organizers.</p>
+                </div>
+                <span class="agenda-where">Foyer</span>
+              </li>
+              <li>
+                <span class="agenda-time">10:00</span>
+                <div class="agenda-item">
+                  <h4>Opening keynote: Building in Public</h4>
+                  <p>Ayesha Malik on shipping projects and sharing the process.</p>
+                </div>
+                <span class="agenda-where">Main Auditorium</span>
+              </li>
+              <li>
+                <span class="agenda-time">11:30</span>
+                <div class="agenda-item">
+                  <h4>Git &amp; GitHub Essentials</h4>
+                  <p>Bootcamp with Maria Khan. Bring a laptop.</p>
+                </div>
+                <span class="agenda-where">Computer Lab 1</span>
+              </li>
+              <li>
+                <span class="agenda-time">13:00</span>
+                <div class="agenda-item">
+                  <h4>Lunch break</h4>
+                </div>
+                <span class="agenda-where">Cafeteria</span>
+              </li>
+              <li>
+                <span class="agenda-time">14:00</span>
+                <div class="agenda-item">
+                  <h4>Careers in Software Engineering</h4>
+                  <p>Guest lecture with Bilal Ahmed.</p>
+                </div>
+                <span class="agenda-where">Seminar Hall</span>
+              </li>
+              <li>
+                <span class="agenda-time">15:00</span>
+                <div class="agenda-item">
+                  <h4>UI Jam: Design &amp; Build</h4>
+                  <p>Six hours, one design brief. Judged by Sana Iqbal.</p>
+                </div>
+                <span class="agenda-where">Innovation Hub</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="agenda-day" id="day2">
+            <div class="agenda-day__head"><h3>Day 2</h3><span>Friday 11 Dec</span></div>
+            <ul class="agenda-list">
+              <li>
+                <span class="agenda-time">09:00</span>
+                <div class="agenda-item">
+                  <h4>Web Dev Bootcamp</h4>
+                  <p>Full-day workshop with Daniyal Raza.</p>
+                </div>
+                <span class="agenda-where">Computer Lab 2</span>
+              </li>
+              <li>
+                <span class="agenda-time">12:30</span>
+                <div class="agenda-item">
+                  <h4>Lunch break</h4>
+                </div>
+                <span class="agenda-where">Cafeteria</span>
+              </li>
+              <li>
+                <span class="agenda-time">14:00</span>
+                <div class="agenda-item">
+                  <h4>AI in Practice</h4>
+                  <p>Guest lecture with Hamza Siddiqui.</p>
+                </div>
+                <span class="agenda-where">Seminar Hall</span>
+              </li>
+              <li>
+                <span class="agenda-time">18:00</span>
+                <div class="agenda-item">
+                  <h4>CodeSprint kickoff</h4>
+                  <p>Teams are announced, the 24-hour clock starts.</p>
+                </div>
+                <span class="agenda-where">Main Auditorium</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="agenda-day" id="day3">
+            <div class="agenda-day__head"><h3>Day 3</h3><span>Saturday 12 Dec</span></div>
+            <ul class="agenda-list">
+              <li>
+                <span class="agenda-time">10:00</span>
+                <div class="agenda-item">
+                  <h4>Mentor office hours</h4>
+                  <p>Get unstuck with Dr. Farhan Qureshi and Zara Hussain.</p>
+                </div>
+                <span class="agenda-where">Main Auditorium</span>
+              </li>
+              <li>
+                <span class="agenda-time">14:00</span>
+                <div class="agenda-item">
+                  <h4>Project demos</h4>
+                  <p>Every team shows what they built.</p>
+                </div>
+                <span class="agenda-where">Main Auditorium</span>
+              </li>
+              <li>
+                <span class="agenda-time">17:00</span>
+                <div class="agenda-item">
+                  <h4>Judging</h4>
+                </div>
+                <span class="agenda-where">Main Auditorium</span>
+              </li>
+              <li>
+                <span class="agenda-time">18:30</span>
+                <div class="agenda-item">
+                  <h4>Awards and closing</h4>
+                  <p>Winners, thanks and group photo.</p>
+                </div>
+                <span class="agenda-where">Main Auditorium</span>
+              </li>
+            </ul>
+          </div>
+
+        <div class="section__more">
+          <a href="events.html" class="btn btn--ghost">Full events list →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="speakers">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow">Speakers</p>
+          <h2>Meet the speakers</h2>
+          <p>The people leading the sessions, from working engineers to open-source maintainers.</p>
+        </div>
+        <div class="grid grid--4">
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">AM</div>
+            <h3>Ayesha Malik</h3>
+            <p class="speaker-card__role">Senior Software Engineer</p>
+            <p class="speaker-card__talk">Opening keynote</p>
+            <button class="btn btn--ghost" type="button" data-speaker="1">View profile</button>
+          </article>
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">DR</div>
+            <h3>Daniyal Raza</h3>
+            <p class="speaker-card__role">Front-End Lead</p>
+            <p class="speaker-card__talk">Web Dev Bootcamp</p>
+            <button class="btn btn--ghost" type="button" data-speaker="2">View profile</button>
+          </article>
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">SI</div>
+            <h3>Sana Iqbal</h3>
+            <p class="speaker-card__role">UX Designer</p>
+            <p class="speaker-card__talk">UI Jam judge</p>
+            <button class="btn btn--ghost" type="button" data-speaker="3">View profile</button>
+          </article>
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">HS</div>
+            <h3>Hamza Siddiqui</h3>
+            <p class="speaker-card__role">Data Scientist</p>
+            <p class="speaker-card__talk">AI in Practice</p>
+            <button class="btn btn--ghost" type="button" data-speaker="4">View profile</button>
+          </article>
+        </div>
+        <div class="section__more">
+          <a href="speakers.html" class="btn btn--ghost">See all speakers →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="venue">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow">Venue</p>
+          <h2>Find us on campus</h2>
+        </div>
+        <div class="venue">
+          <!-- Module 3: replace with the Leaflet + OpenStreetMap map -->
+          <div class="map-placeholder" role="img" aria-label="Venue location: Innovation Hub, Main Campus">
+            <div><strong>Innovation Hub</strong><span>Main Campus</span></div>
+          </div>
+          <div class="venue__info card">
+            <dl>
+              <dt>Main venue</dt><dd>Innovation Hub, Main Campus</dd>
+              <dt>Address</dt><dd>University Road, Block C (sample address)</dd>
+              <dt>Opening hours</dt><dd>09:00 – 19:00 on Day 1 and 2, 10:00 – 19:00 on Day 3</dd>
+              <dt>Getting there</dt><dd>Five minutes' walk from the main gate. Parking is available behind Block C.</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow">FAQ</p>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="faq-list">
+          <article class="card faq-item">
+            <h3>Who can attend?</h3>
+            <p>Any student on campus. You don't need to be from a computer science department, and beginners are welcome at the bootcamps.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Does it cost anything?</h3>
+            <p>No. All events are free, but seats are limited so you need to register.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Do I need to bring a laptop?</h3>
+            <p>Yes for the hackathons and bootcamps. Lectures don't need one.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Can I join a hackathon alone?</h3>
+            <p>Yes. If you register without a team, we'll help you find one at the kickoff.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Can I register for more than one event?</h3>
+            <p>Yes, as long as the times don't overlap. Check the agenda before you pick.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>What if I can't make it after registering?</h3>
+            <p>Please cancel by emailing the organizers so your seat can go to someone on the waitlist.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="register">
+      <div class="container">
+        <div class="register">
+          <div>
+            <p class="section__eyebrow">Join us</p>
+            <h2>Reserve your seat</h2>
+            <p>Registration takes under a minute and you can sign up for as many events as you like.</p>
+            <ul class="register__perks">
+              <li>Free entry for all students</li>
+              <li>Calendar invite sent when you register</li>
+              <li>Lunch included on Day 1 and 2</li>
+            </ul>
+            <div class="seat-meter">
+              <div class="seat-meter__row"><span>Seats taken</span><span>310 / 548</span></div>
+              <div class="seat-meter__bar"><i></i></div>
+            </div>
+          </div>
+          <!-- Module 3: this form moves into an overlay and gets validation -->
+          <form class="card form-card" action="#" onsubmit="return false">
+            <div class="field"><label for="name">Full name</label><input id="name" type="text" placeholder="Your name" autocomplete="name"></div>
+            <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@university.edu" autocomplete="email"></div>
+            <div class="field"><label for="roll">University / roll number</label><input id="roll" type="text" placeholder="e.g. 21-CS-042"></div>
+            <div class="field">
+              <label for="event">Event</label>
+              <select id="event">
+                <option value="">Choose an event</option>
+                <option>CodeSprint 24h Hackathon</option>
+                <option>Web Dev Bootcamp</option>
+                <option>Careers in Software Engineering</option>
+                <option>Git &amp; GitHub Essentials</option>
+                <option>AI in Practice</option>
+              </select>
+            </div>
+            <label class="field field--check"><input type="checkbox"> I agree to the event code of conduct</label>
+            <button class="btn" type="submit">Reserve my seat</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a href="index.html" class="logo">Event<span>Pulse</span></a>
+          <p style="margin-top:var(--space-2)">One place for campus hackathons, bootcamps and guest lectures.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Event info</h4>
+          <ul>
+            <li><a href="index.html#agenda">Agenda</a></li>
+            <li><a href="index.html#venue">Venue</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#register">Register</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; <span id="year">2026</span> EventPulse. Built by Muhammad Urwa Javed &middot; Zynvex Solutions Front End Internship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

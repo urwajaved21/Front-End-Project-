@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — EventPulse</title>
+  <meta name="description" content="Browse every hackathon, coding bootcamp and guest lecture on campus, check seats and register.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">Event<span>Pulse</span></a>
+      <nav class="nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html" class="is-active" aria-current="page">Events</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="index.html#venue">Venue</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li class="nav__cta-item"><a href="index.html#register">Register</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#register" class="btn site-header__cta">Register</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__bars"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Events</p>
+        <h1>All events</h1>
+        <p>Hackathons, coding bootcamps and guest lectures. Pick what fits your schedule and reserve a seat.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Filter chips are static for now. They start working in Module 3. -->
+        <div class="filters" role="group" aria-label="Filter events by type">
+          <button class="chip is-active" type="button" data-filter="all">All</button>
+          <button class="chip" type="button" data-filter="hackathon">Hackathons</button>
+          <button class="chip" type="button" data-filter="bootcamp">Bootcamps</button>
+          <button class="chip" type="button" data-filter="lecture">Guest lectures</button>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card event-card" data-type="hackathon">
+            <div class="event-card__top"><span class="tag">Hackathon</span><span class="seats ">120 seats</span></div>
+            <h3>CodeSprint 24h Hackathon</h3>
+            <p class="event-card__meta">📅 11–12 Dec 2026 &middot; 📍 Main Auditorium</p>
+            <p>Form a team and build a working project in 24 hours. Mentors on hand, prizes for the top three teams.</p>
+            <div class="event-card__footer">
+              <a href="index.html#agenda" class="btn btn--ghost">Details</a>
+              <a href="index.html#register" class="btn">Register</a>
+            </div>
+          </article>
+
+          <article class="card event-card" data-type="bootcamp">
+            <div class="event-card__top"><span class="tag">Bootcamp</span><span class="seats seats--low">18 seats left</span></div>
+            <h3>Web Dev Bootcamp</h3>
+            <p class="event-card__meta">📅 11 Dec 2026 &middot; 📍 Computer Lab 2</p>
+            <p>A hands-on day covering HTML, CSS and JavaScript. You leave with your own small site.</p>
+            <div class="event-card__footer">
+              <a href="index.html#agenda" class="btn btn--ghost">Details</a>
+              <a href="index.html#register" class="btn">Register</a>
+            </div>
+          </article>
+
+          <article class="card event-card" data-type="lecture">
+            <div class="event-card__top"><span class="tag">Guest lecture</span><span class="seats ">200 seats</span></div>
+            <h3>Careers in Software Engineering</h3>
+            <p class="event-card__meta">📅 10 Dec 2026 &middot; 📍 Seminar Hall</p>
+            <p>An industry guest explains how to land a first tech role, with time for questions.</p>
+            <div class="event-card__footer">
+              <a href="index.html#agenda" class="btn btn--ghost">Details</a>
+              <a href="index.html#register" class="btn">Register</a>
+            </div>
+          </article>
+
+          <article class="card event-card" data-type="bootcamp">
+            <div class="event-card__top"><span class="tag">Bootcamp</span><span class="seats ">60 seats</span></div>
+            <h3>Git &amp; GitHub Essentials</h3>
+            <p class="event-card__meta">📅 10 Dec 2026 &middot; 📍 Computer Lab 1</p>
+            <p>Version control from zero: commits, branches, pull requests and working in a team.</p>
+            <div class="event-card__footer">
+              <a href="index.html#agenda" class="btn btn--ghost">Details</a>
+              <a href="index.html#register" class="btn">Register</a>
+            </div>
+          </article>
+
+          <article class="card event-card" data-type="hackathon">
+            <div class="event-card__top"><span class="tag">Hackathon</span><span class="seats seats--full">Sold out</span></div>
+            <h3>UI Jam: Design &amp; Build</h3>
+            <p class="event-card__meta">📅 10 Dec 2026 &middot; 📍 Innovation Hub</p>
+            <p>A 6-hour front-end challenge. Take a design brief and turn it into a live page.</p>
+            <div class="event-card__footer">
+              <a href="index.html#agenda" class="btn btn--ghost">Details</a>
+              <a href="index.html#register" class="btn" aria-disabled="true">Join waitlist</a>
+            </div>
+          </article>
+
+          <article class="card event-card" data-type="lecture">
+            <div class="event-card__top"><span class="tag">Guest lecture</span><span class="seats ">150 seats</span></div>
+            <h3>AI in Practice</h3>
+            <p class="event-card__meta">📅 11 Dec 2026 &middot; 📍 Seminar Hall</p>
+            <p>A practical talk on how developers use AI tools in real projects, and where they fall short.</p>
+            <div class="event-card__footer">
+              <a href="index.html#agenda" class="btn btn--ghost">Details</a>
+              <a href="index.html#register" class="btn">Register</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Module 3: shown when a filter has no results -->
+        <p class="visually-hidden" id="empty-state">No events match this filter.</p>
+
+        <div class="section__more">
+          <a href="speakers.html" class="btn btn--ghost">Meet the speakers →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Ready to join?</h2>
+          <p>Seats are limited and fill up fast. Reserve yours in under a minute.</p>
+          <a href="index.html#register" class="btn">Reserve my seat</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a href="index.html" class="logo">Event<span>Pulse</span></a>
+          <p style="margin-top:var(--space-2)">One place for campus hackathons, bootcamps and guest lectures.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Event info</h4>
+          <ul>
+            <li><a href="index.html#agenda">Agenda</a></li>
+            <li><a href="index.html#venue">Venue</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#register">Register</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; <span id="year">2026</span> EventPulse. Built by Muhammad Urwa Javed &middot; Zynvex Solutions Front End Internship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

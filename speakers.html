@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speakers — EventPulse</title>
+  <meta name="description" content="Meet the engineers, mentors and industry guests speaking at EventPulse.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">Event<span>Pulse</span></a>
+      <nav class="nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="speakers.html" class="is-active" aria-current="page">Speakers</a></li>
+          <li><a href="index.html#venue">Venue</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li class="nav__cta-item"><a href="index.html#register">Register</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#register" class="btn site-header__cta">Register</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__bars"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Speakers</p>
+        <h1>Meet the speakers</h1>
+        <p>Engineers, mentors and industry guests leading our hackathons, bootcamps and lectures.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Module 3: each "View profile" button opens a popup with bio and links -->
+        <div class="grid grid--4">
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">AM</div>
+            <h3>Ayesha Malik</h3>
+            <p class="speaker-card__role">Senior Software Engineer</p>
+            <p class="speaker-card__talk">Opening keynote</p>
+            <button class="btn btn--ghost" type="button" data-speaker="1">View profile</button>
+          </article>
+
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">DR</div>
+            <h3>Daniyal Raza</h3>
+            <p class="speaker-card__role">Front-End Lead</p>
+            <p class="speaker-card__talk">Web Dev Bootcamp</p>
+            <button class="btn btn--ghost" type="button" data-speaker="2">View profile</button>
+          </article>
+
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">SI</div>
+            <h3>Sana Iqbal</h3>
+            <p class="speaker-card__role">UX Designer</p>
+            <p class="speaker-card__talk">UI Jam judge</p>
+            <button class="btn btn--ghost" type="button" data-speaker="3">View profile</button>
+          </article>
+
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">HS</div>
+            <h3>Hamza Siddiqui</h3>
+            <p class="speaker-card__role">Data Scientist</p>
+            <p class="speaker-card__talk">AI in Practice</p>
+            <button class="btn btn--ghost" type="button" data-speaker="4">View profile</button>
+          </article>
+
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">MK</div>
+            <h3>Maria Khan</h3>
+            <p class="speaker-card__role">Open-Source Maintainer</p>
+            <p class="speaker-card__talk">Git &amp; GitHub Essentials</p>
+            <button class="btn btn--ghost" type="button" data-speaker="5">View profile</button>
+          </article>
+
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">BA</div>
+            <h3>Bilal Ahmed</h3>
+            <p class="speaker-card__role">Startup Founder</p>
+            <p class="speaker-card__talk">Careers in Software Engineering</p>
+            <button class="btn btn--ghost" type="button" data-speaker="6">View profile</button>
+          </article>
+
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">FQ</div>
+            <h3>Dr. Farhan Qureshi</h3>
+            <p class="speaker-card__role">Faculty Mentor</p>
+            <p class="speaker-card__talk">CodeSprint mentor</p>
+            <button class="btn btn--ghost" type="button" data-speaker="7">View profile</button>
+          </article>
+
+          <article class="card speaker-card">
+            <div class="speaker-card__photo" aria-hidden="true">ZH</div>
+            <h3>Zara Hussain</h3>
+            <p class="speaker-card__role">DevOps Engineer</p>
+            <p class="speaker-card__talk">CodeSprint mentor</p>
+            <button class="btn btn--ghost" type="button" data-speaker="8">View profile</button>
+          </article>
+        </div>
+
+        <div class="section__more">
+          <a href="events.html" class="btn btn--ghost">← Browse all events</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Learn from the best</h2>
+          <p>Register once and get access to every session these speakers lead.</p>
+          <a href="index.html#register" class="btn">Reserve my seat</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a href="index.html" class="logo">Event<span>Pulse</span></a>
+          <p style="margin-top:var(--space-2)">One place for campus hackathons, bootcamps and guest lectures.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Event info</h4>
+          <ul>
+            <li><a href="index.html#agenda">Agenda</a></li>
+            <li><a href="index.html#venue">Venue</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#register">Register</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; <span id="year">2026</span> EventPulse. Built by Muhammad Urwa Javed &middot; Zynvex Solutions Front End Internship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

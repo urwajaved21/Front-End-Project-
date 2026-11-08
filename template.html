@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[PAGE TITLE] — EventPulse</title>
+  <meta name="description" content="[ONE-SENTENCE PAGE DESCRIPTION]">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">Event<span>Pulse</span></a>
+      <nav class="nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="index.html#venue">Venue</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li class="nav__cta-item"><a href="index.html#register">Register</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#register" class="btn site-header__cta">Register</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__bars"></span>
+      </button>
+    </div>
+  </header>
+
+  <!--
+    HOW TO USE THIS TEMPLATE
+    1. Copy this file and rename it (e.g. schedule.html)
+    2. Replace every [PLACEHOLDER]
+    3. Add a link to the new page in the nav of EVERY page
+    4. Delete these comments when you're done
+  -->
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / [PAGE NAME]</p>
+        <h1>[PAGE HEADING]</h1>
+        <p>[One or two sentences saying what this page is for.]</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section__eyebrow">[Small label]</p>
+        <h2>[Section heading]</h2>
+        <p>[Intro text.]</p>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <span class="tag">[Tag]</span>
+            <h3>[Card title]</h3>
+            <p>[Card text.]</p>
+            <a href="#" class="btn btn--ghost">[Button]</a>
+          </article>
+          <article class="card">
+            <span class="tag">[Tag]</span>
+            <h3>[Card title]</h3>
+            <p>[Card text.]</p>
+            <a href="#" class="btn btn--ghost">[Button]</a>
+          </article>
+          <article class="card">
+            <span class="tag">[Tag]</span>
+            <h3>[Card title]</h3>
+            <p>[Card text.]</p>
+            <a href="#" class="btn btn--ghost">[Button]</a>
+          </article>
+        </div>
+
+        <div class="section__more">
+          <a href="events.html" class="btn btn--ghost">[Link to another page →]</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-band">
+          <h2>[CTA heading]</h2>
+          <p>[Short reason to register.]</p>
+          <a href="index.html#register" class="btn">Reserve my seat</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a href="index.html" class="logo">Event<span>Pulse</span></a>
+          <p style="margin-top:var(--space-2)">One place for campus hackathons, bootcamps and guest lectures.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Event info</h4>
+          <ul>
+            <li><a href="index.html#agenda">Agenda</a></li>
+            <li><a href="index.html#venue">Venue</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#register">Register</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; <span id="year">2026</span> EventPulse. Built by Muhammad Urwa Javed &middot; Zynvex Solutions Front End Internship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
