@@ -8,7 +8,7 @@ I built it as my project for the Zynvex Solutions Batch 5 virtual internship (Fr
 - **Internship ID:** ZYNVEX-CERT-2192
 - **Live site:** _add your link here after deploying (steps in [`docs/DEPLOY.md`](docs/DEPLOY.md))_
 
-![EventPulse home page on desktop]("C:\Users\Lenovo\OneDrive\Pictures\Screenshots\Screenshot 2026-11-22 182453.png")
+[EventPulse home page on desktop]("C:\Users\Lenovo\OneDrive\Pictures\Screenshots\Screenshot 2026-11-22 182453.png")
 
 <table>
   <tr>
