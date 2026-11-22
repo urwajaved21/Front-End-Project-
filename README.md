@@ -8,7 +8,8 @@ I built it as my project for the Zynvex Solutions Batch 5 virtual internship (Fr
 - **Internship ID:** ZYNVEX-CERT-2192
 - **Live site:** _add your link here after deploying (steps in [`docs/DEPLOY.md`](docs/DEPLOY.md))_
 
-[EventPulse home page on desktop]("C:\Users\Lenovo\OneDrive\Pictures\Screenshots\Screenshot 2026-11-22 182453.png")
+[EventPulse home page on desktop](<img width="945" height="434" alt="Screenshot 2026-11-22 182453" src="https://github.com/user-attachments/assets/537801ab-e673-4706-8ec3-bac1f7358e2f" />
+)
 
 <table>
   <tr>
