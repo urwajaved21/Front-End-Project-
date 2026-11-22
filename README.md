@@ -2,45 +2,24 @@
 
 A website for campus tech events. Hackathons, coding bootcamps and guest lectures usually get announced in group chats and on posters, so people miss them or sign up late. EventPulse puts the schedule, the speakers, the venue and the sign-up in one place.
 
-I'm building it as my project for the Zynvex Solutions Batch 5 virtual internship (Front End track).
+I built it as my project for the Zynvex Solutions Batch 5 virtual internship (Front End track).
 
 - **Name:** Muhammad Urwa Javed
 - **Internship ID:** ZYNVEX-CERT-2192
-- **Live link:** not deployed yet (that's part of Module 4)
+- **Live site:** _add your link here after deploying (steps in [`docs/DEPLOY.md`](docs/DEPLOY.md))_
 
-## Where the project is at
+![EventPulse home page on desktop](docs/screenshots/home-desktop.jpg)
 
-**Module 3 is done** (Nov 09 – Nov 15): everything on the site now works. The agenda has day tabs, speakers open in a popup, the FAQ is an accordion, the venue shows a map, and registration happens in an overlay with validation. Seat counters update live when someone registers, and any event can be added to a calendar.
-
-**Module 3 (functionality)**
-
-- Agenda tabs for Day 1, 2 and 3 (mouse, touch and arrow keys), opening on today's day if the festival is running
-- Speaker popup with bio, sessions, a Register button and links
-- FAQ accordion, one answer open at a time
-- Venue map with Leaflet and OpenStreetMap, with a plain-address fallback if the map can't load
-- Registration overlay with validation: name, email, optional student ID, event, experience level and consent
-- Live seat counters with three states: **Seats open**, **Filling fast** (25% or fewer left) and **Sold out**
-- Registration saves to `localStorage`, so seat counts and "You registered" tags survive a reload and sync between tabs
-- Confirmation screen with a code and an **Add to calendar** button that downloads an `.ics` file (one event, or all of them)
-- Event filters on the Events page: by type, hide sold-out, and `events.html?type=hackathon` links
-- Edge cases: empty filter results, all events sold out, duplicate registration, an event selling out while the form is open, blocked `localStorage`, map failing to load, JavaScript turned off
-
-**Module 2 (core structure and main pages)**
-
-- Header with logo, nav links and a Register button, sticky at the top
-- Mobile menu that opens from a hamburger button on small screens
-- Footer with links, shared on every page
-- Home page with every section filled in: hero, about, 3-day agenda, speakers, venue, FAQ and registration
-- Events page with six event cards, Speakers page with eight speaker cards
-- Base styling using the design tokens from Module 1
-
-**Module 1 (planning and setup)**
-
-- Decided what the site does and who it's for, listed every page and feature
-- Sketched wireframes for desktop, mobile and the popups
-- Picked the tools, set up this Git repo, chose colors, fonts and layout rules
-
-The event names, speaker names, address and seat numbers are sample content I made up. They're consistent with each other (the agenda matches the events and the speakers) so I can swap in real details later.
+<table>
+  <tr>
+    <td><img src="docs/screenshots/home-mobile.jpg" alt="Home page on a phone" width="240"></td>
+    <td><img src="docs/screenshots/agenda-tabs.jpg" alt="Agenda with day tabs" width="420"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/events-page.jpg" alt="Events page with filters" width="240"></td>
+    <td><img src="docs/screenshots/registration-success.jpg" alt="Registration confirmation with calendar buttons" width="420"></td>
+  </tr>
+</table>
 
 ## Who it's for
 
@@ -48,44 +27,59 @@ The event names, speaker names, address and seat numbers are sample content I ma
 
 **Organizers** who need one clean page that gets people to sign up.
 
+## What it does
+
+- **Three pages:** Home, Events and Speakers, with a sticky menu that becomes a hamburger menu on phones
+- **Agenda tabs** for Day 1, 2 and 3 (arrow keys work, and `index.html#day2` opens a day directly)
+- **Speaker pop-ups** with a short bio
+- **FAQ accordion**, one answer open at a time
+- **Registration pop-up** on every page, with form validation and clear error messages
+- **Live seat counters** with three states: plenty, filling fast (amber) and sold out (red)
+- **Waitlist** for sold-out events, and a check that stops the same email registering for the same event twice
+- **Calendar invite** after registering: an `.ics` download and a Google Calendar link
+- **Venue map** with Leaflet and OpenStreetMap, plus a directions link
+- **Events filters and search**, with an empty state when nothing matches
+
 ## Pages
 
 | Page | File | What it's for |
 |---|---|---|
-| Home | `index.html` | The main page: intro, agenda, speakers, venue map, FAQ and registration |
-| Events | `events.html` | Every event in one list, with filters by type |
+| Home | `index.html` | Intro, agenda, speakers, venue map, FAQ and registration |
+| Events | `events.html` | Every event in one list, with filters and search |
 | Speakers | `speakers.html` | The full speaker line-up |
+| Not found | `404.html` | Friendly error page for bad links |
 | Template | `template.html` | A blank page with the shared header and footer, for making new pages |
-
-Home is one long page because most visitors only need to see the event and register. Events and Speakers are separate pages so Home doesn't get crowded.
-
-## How it works
-
-All content lives in `js/data.js`: events, agenda, speakers, FAQ and venue. The pages build their sections from that one file, so the agenda, event cards, speaker popups and seat counts can never disagree. To use real details, edit `data.js` and nothing else.
-
-`js/main.js` does the rest, in sections: state and seat counts, seat meters, calendar file, toasts and dialogs, registration form, speaker popup, then the page features.
-
-**Seat counter.** Each event has a total and a starting number of taken seats. Every registration adds one to a counter saved in `localStorage`. Left seats = total − taken. When 25% or fewer are left the badge turns amber ("Filling fast"), and at zero it turns red ("Sold out") and every Register button for that event is disabled.
-
-**Registration and validation.** The form uses `novalidate` and checks fields itself, so the messages are consistent. Errors show under the field when you leave it, and the first wrong field gets focus on submit. Rules: name is letters only, at least 2 characters; email must look like an email; student ID is optional but must be 4–20 letters, numbers or dashes; event must be one with seats left; experience level and consent are required. The same email can't register twice for the same event.
-
-**Calendar.** "Add to calendar" builds a standard iCalendar (`.ics`) file in the browser with the title, time, room, speakers and a reminder one hour before. Times are local, so the event shows at the right hour in whatever timezone the viewer is in.
-
-**Accessibility.** Tabs follow the ARIA tab pattern with arrow-key support. Popups use the native `<dialog>` element, so focus is trapped and Esc closes them. Errors are tied to fields with `aria-describedby`. Buttons have visible focus, and animations stop if the visitor prefers reduced motion.
-
-**Backend.** There isn't one. Registrations are stored in the visitor's own browser, which is fine for a demo but means two different people can't see each other's registrations. There's a "Reset demo data" link in the footer. The short delay in the submit handler stands in for a network request, so a real API can replace it later.
 
 ## Tech
 
 - HTML5
 - CSS3 (custom properties, Grid and Flexbox)
-- Vanilla JavaScript, no frameworks
+- Vanilla JavaScript, no frameworks and no build step
 - Leaflet and OpenStreetMap for the map
+- localStorage for seat counts and registrations
 - Git and GitHub
 
-I'm not using a framework because the project doesn't need one, and writing it by hand is better practice.
+I didn't use a framework because the project doesn't need one, and writing it by hand is better practice.
 
-## Design choices
+## Running it
+
+There's nothing to install. Clone the repo and open `index.html` in a browser. VS Code's Live Server extension is handy if you want the page to refresh as you edit.
+
+```bash
+git clone <repo-url>
+cd eventpulse
+```
+
+## Things to know
+
+- **The content is sample content.** Event names, speakers, bios, the address and the seat numbers are made up. The data lives in `js/data.js`, and the matching text on the cards is in the HTML pages.
+- **Seat counts are simulated.** There is no server. The starting numbers come from `data.js`, each registration adds one, and the browser remembers it with localStorage. A timer also adds a seat every 15 to 30 seconds on events that still have plenty, to imitate other people registering. Set `simulateLive: false` in `data.js` to turn that off. Registrations are saved only in the visitor's own browser.
+- **The map needs an internet connection.** Leaflet is downloaded only when the visitor scrolls near the venue section. If it can't load, the page shows the venue card and the directions link instead.
+- **The venue coordinates are a sample location.** Change `lat`, `lng` and the address in `js/data.js` to your real campus.
+- **Calendar times** are written as local time, so an event at 16:00 shows at 16:00 in the person's calendar.
+- **Without JavaScript** the agenda and FAQ still show in full, but registration needs JavaScript.
+
+## Design
 
 I wanted it to feel like a developer event, so the theme is dark with a violet and teal color pair.
 
@@ -93,7 +87,7 @@ I wanted it to feel like a developer event, so the theme is dark with a violet a
 |---|---|
 | Background | `#0B1020` |
 | Cards | `#131A33` |
-| Buttons and brand | `#6B46F5` (buttons use a slightly darker `#5836E0` so white text is easy to read) |
+| Buttons and brand | `#6B46F5` |
 | Highlights and live counters | `#22D3A6` |
 | "Filling fast" | `#FFB020` |
 | "Sold out" and errors | `#FF5D73` |
@@ -103,7 +97,30 @@ I wanted it to feel like a developer event, so the theme is dark with a violet a
 
 All colors, font sizes and spacing live in `css/variables.css`, so changing the look later means editing one file.
 
-**Breakpoints:** the layout switches to the mobile menu and single-column sections at 800px. I checked it at 1280px and 390px wide. Fine-tuning for tablet sizes and other devices happens in Module 4.
+## Responsive design
+
+I checked every page at widths from 320px to 1920px (small phone to large desktop), including a phone in landscape and tablets. Nothing scrolls sideways, the pop-ups fit the screen and can be scrolled when they are taller than it, and buttons and links are at least 44px tall to tap. Below 800px the menu becomes a hamburger menu and sections stack in one column.
+
+## Accessibility
+
+- Semantic HTML, one `h1` per page and no skipped heading levels
+- A "Skip to content" link, and a visible focus outline on everything you can tab to
+- Tabs, accordion and pop-ups work with the keyboard (arrow keys, Enter, Escape), and focus returns to the button that opened a pop-up
+- Form fields have labels, and errors are announced next to the field
+- Text and background colors meet the 4.5:1 contrast guideline
+- Animations switch off for people who ask their device for reduced motion
+
+## Performance
+
+- The home page's own files (HTML, CSS, JavaScript) come to about 29 KB gzipped
+- No images to download, and no frameworks
+- Scripts are deferred so they don't block the page from showing
+- Leaflet (the map library) loads only when you scroll near the map, not with the page
+- Fonts use `display=swap` so text shows straight away
+
+## Browser support
+
+Built with features that current versions of Chrome, Edge, Firefox and Safari support (2022 and later). I checked the layout and every feature in Chromium (the engine behind Chrome and Edge). The pop-ups use the native `<dialog>` element, which needs Safari 15.4 or newer.
 
 ## Folder layout
 
@@ -112,53 +129,58 @@ eventpulse/
 ├── index.html
 ├── events.html
 ├── speakers.html
+├── 404.html
 ├── template.html
+├── robots.txt
 ├── css/
 │   ├── variables.css    colors, fonts, spacing
-│   ├── base.css         reset, buttons, cards, badges
+│   ├── base.css         reset, buttons, cards
 │   ├── layout.css       header, mobile menu, hero, footer
-│   ├── components.css   tabs, speakers, FAQ, map, form, popups, seat meter
-│   └── pages.css        events and speakers pages
+│   ├── components.css   home page sections (agenda, venue, FAQ, pick list)
+│   ├── pages.css        events and speakers pages
+│   └── interactive.css  tabs, accordion, pop-ups, form, map, filters
 ├── js/
-│   ├── data.js          all the content (events, agenda, speakers, FAQ, venue)
-│   └── main.js          all the behavior
+│   ├── data.js          events, speakers and venue (edit this one)
+│   ├── store.js         saves data in the browser
+│   ├── main.js          mobile menu, footer year
+│   ├── modal.js         pop-up helper
+│   ├── seats.js         live seat counters
+│   ├── calendar.js      .ics file and Google Calendar link
+│   ├── register.js      registration pop-up and validation
+│   ├── speakers.js      speaker pop-up
+│   ├── tabs.js          agenda tabs
+│   ├── accordion.js     FAQ accordion
+│   ├── filters.js       events filters and search
+│   └── map.js           Leaflet map (loaded on demand)
 ├── assets/
-│   ├── images/
-│   └── icons/
+│   ├── icons/           favicon
+│   └── images/
 └── docs/
-    ├── MODULE-1-PLAN.md
-    ├── MODULE-3-NOTES.md
-    └── wireframes.html
+    ├── DEPLOY.md        deploy and submit steps
+    ├── HOW-IT-WORKS.md  how each feature works
+    ├── MODULE-1-PLAN.md planning document
+    ├── wireframes.html  wireframes and style tile
+    └── screenshots/
 ```
 
 ## Docs
 
-- [`docs/MODULE-1-PLAN.md`](docs/MODULE-1-PLAN.md) has the full plan: features, tools, design decisions, button flow and risks.
-- [`docs/MODULE-3-NOTES.md`](docs/MODULE-3-NOTES.md) has the Module 3 test checklist and what I'd change next.
-- [`docs/wireframes.html`](docs/wireframes.html) opens in a browser and shows the style tile and all the wireframes.
+- [`docs/DEPLOY.md`](docs/DEPLOY.md): putting the site online and what to submit
+- [`docs/HOW-IT-WORKS.md`](docs/HOW-IT-WORKS.md): how each feature works and which file to look in
+- [`docs/MODULE-1-PLAN.md`](docs/MODULE-1-PLAN.md): the original plan with features, tools, design decisions and risks
+- [`docs/wireframes.html`](docs/wireframes.html): open in a browser to see the wireframes and style tile
 
-## Running it
+## How it was built
 
-There's nothing to install. Clone the repo and open `index.html` in a browser.
-
-```bash
-git clone <repo-url>
-cd eventpulse
-```
-
-**For the map, use a local server instead of double-clicking the file.** OpenStreetMap's tile servers can refuse requests from pages opened as `file://`, so the map may show an empty grey box. VS Code's Live Server extension fixes that (it also refreshes the page as you edit), or run `python -m http.server` in the folder and open `http://localhost:8000`. The map also needs an internet connection. Without it, the page shows the venue address and a link instead.
-
-## Git
-
-`main` is the stable branch. I commit in small steps using prefixes like `feat:`, `docs:` and `fix:`, and tag the end of each module (`module-1`, `module-2`, `module-3` and so on).
-
-## Plan
-
-| Module | Dates | Goal |
+| Module | Dates | What I did |
 |---|---|---|
-| 1. Planning and setup | Oct 26 – Nov 01 | Done. Plan, wireframes, repo, design choices |
-| 2. Core structure | Nov 02 – Nov 08 | Done. Header, footer and nav; all three pages with static content and base styling |
-| 3. Functionality | Nov 09 – Nov 15 | Done. Tabs, popups, accordion, form, seat counter, calendar file, map, filters |
-| 4. Polish and delivery | Nov 16 – Nov 22 | Responsive fixes, browser testing, cleanup, deploy, final README |
+| 1. Planning and setup | Oct 26 – Nov 01 | Plan, wireframes, repo, colors, fonts and layout rules |
+| 2. Core structure | Nov 02 – Nov 08 | Header, mobile menu, footer, and the three pages with content |
+| 3. Functionality | Nov 09 – Nov 15 | Tabs, pop-ups, accordion, registration, seat counters, calendar invites, map, filters |
+| 4. Polish and delivery | Nov 16 – Nov 22 | Responsive and accessibility fixes, performance, cleanup, 404 page, deployment guide |
 
-Things I'm watching out for in Module 4: tablet sizes, testing Chrome, Firefox, Safari and Edge, the map on the deployed site, and trimming anything in the CSS and JS I'm not using.
+I commit in small steps using prefixes like `feat:`, `docs:` and `fix:`, and tag the end of each module (`module-1` to `module-4`).
+
+## License
+
+For educational / internship purposes.
